@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine GitHub Projekte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Zusätzliche Stile oder Anpassungen können hier hinzugefügt werden */
+        body {
+            font-family: 'Inter', sans-serif; /* Setzt die Schriftart auf Inter */
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Weiche Übergänge für Hover-Effekte */
+        }
+        .project-card:hover {
+            transform: translateY(-5px); /* Leichter Anhebe-Effekt beim Hover */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* Stärkerer Schatten beim Hover */
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px; /* Volle Abrundung für Pillenform */
+            font-size: 0.75rem; /* Kleinere Schriftgröße */
+            font-weight: 600; /* Halbfett */
+            text-transform: uppercase; /* Großbuchstaben */
+        }
+        .status-active { background-color: #d1fae5; color: #065f46; } /* Grün */
+        .status-paused { background-color: #fef3c7; color: #92400e; } /* Gelb */
+        .status-planning { background-color: #dbeafe; color: #1e40af; } /* Blau */
+        .status-archived { background-color: #e5e7eb; color: #4b5563; } /* Grau */
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased">
+
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 shadow-md">
+        <div class="container mx-auto max-w-6xl">
+            <h1 class="text-3xl font-bold">Meine Projektübersicht</h1>
+            <p class="text-indigo-100 mt-1">Ein Blick auf meine aktuellen Entwicklungen und Pläne.</p>
+            <a href="https://github.com/DEIN_BENUTZERNAME" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-sm bg-white text-indigo-700 font-semibold px-4 py-2 rounded-md hover:bg-gray-100 transition duration-300">
+                Mein GitHub Profil
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-6xl p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <section class="md:col-span-2">
+            <h2 class="text-2xl font-semibold mb-6 border-b-2 border-blue-500 pb-2">Aktuelle Projekte</h2>
+
+            <article class="bg-white rounded-lg shadow-md p-6 mb-6 project-card">
+                <header class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Projekt Alpha</h3>
+                        <p class="text-sm text-gray-500">Ein Tool zur Datenvisualisierung</p>
+                    </div>
+                    <span class="status-badge status-active">Aktiv</span>
+                    </header>
+                <p class="text-gray-700 mb-4">
+                    Beschreibung des Projekts. Was macht es? Was sind die Hauptziele?
+                    Hier könnten auch die verwendeten Technologien stehen (z.B. Python, React, etc.).
+                </p>
+                <footer class="flex justify-end space-x-3">
+                    <a href="#TEASER_LINK_1" class="text-sm text-blue-600 hover:underline">Teaser ansehen</a>
+                    <a href="https://github.com/DEIN_BENUTZERNAME/projekt-alpha" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 hover:underline">GitHub Repo</a>
+                </footer>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-md p-6 mb-6 project-card">
+                <header class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Projekt Beta</h3>
+                        <p class="text-sm text-gray-500">Mobile App für Notizen</p>
+                    </div>
+                    <span class="status-badge status-planning">In Planung</span>
+                </header>
+                <p class="text-gray-700 mb-4">
+                    Kurze Beschreibung für Projekt Beta. Dieses Projekt befindet sich noch in der Planungsphase.
+                    Ziel ist es, eine intuitive Notiz-App für unterwegs zu entwickeln.
+                </p>
+                 <footer class="flex justify-end space-x-3">
+                    <span class="text-sm text-gray-400">Noch kein Repo</span>
+                </footer>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-md p-6 mb-6 project-card">
+                <header class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Altes Projekt Gamma</h3>
+                        <p class="text-sm text-gray-500">Ein Web-Scraper (archiviert)</p>
+                    </div>
+                    <span class="status-badge status-archived">Archiviert</span>
+                </header>
+                <p class="text-gray-700 mb-4">
+                    Dieses Projekt wird nicht mehr aktiv weiterentwickelt, der Code ist aber noch verfügbar.
+                </p>
+                 <footer class="flex justify-end space-x-3">
+                    <a href="https://github.com/DEIN_BENUTZERNAME/altes-projekt-gamma" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 hover:underline">GitHub Repo</a>
+                </footer>
+            </article>
+
+            </section>
+
+        <aside class="md:col-span-1 space-y-8">
+
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4 border-b pb-2">Teaser & Ankündigungen</h2>
+
+                <div id="TEASER_LINK_1" class="mb-5">
+                    <h3 class="font-semibold text-lg text-indigo-700">Projekt Alpha: Neues Dashboard!</h3>
+                    <p class="text-sm text-gray-600 mt-1">
+                        Bald verfügbar: Ein komplett überarbeitetes Dashboard mit interaktiven Charts
+                        und verbesserten Filtermöglichkeiten. Vorschau folgt in Kürze!
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg text-indigo-700">Projekt Beta: Konzeptphase</h3>
+                     <p class="text-sm text-gray-600 mt-1">
+                        Die ersten Entwürfe für die Benutzeroberfläche von Projekt Beta sind fertig.
+                        Mehr Details folgen, sobald die Kernfunktionen definiert sind.
+                    </p>
+                </div>
+
+                </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4 border-b pb-2">Release Monitor</h2>
+                <ul class="space-y-3">
+                    <li class="flex justify-between items-center">
+                        <div>
+                            <span class="font-medium text-gray-800">Projekt Alpha v1.1</span>
+                            <p class="text-xs text-gray-500">Bugfixes & Performance-Update</p>
+                        </div>
+                        <span class="text-sm font-semibold text-green-600">~ Ende Mai 2025</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <div>
+                            <span class="font-medium text-gray-800">Projekt Alpha v1.2</span>
+                             <p class="text-xs text-gray-500">Neues Dashboard Feature</p>
+                        </div>
+                        <span class="text-sm font-semibold text-orange-600">~ Mitte Juni 2025</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                         <div>
+                            <span class="font-medium text-gray-800">Projekt Beta v0.1 (Alpha)</span>
+                             <p class="text-xs text-gray-500">Erster interner Test</p>
+                        </div>
+                        <span class="text-sm font-semibold text-blue-600">~ Q3 2025</span>
+                    </li>
+                    </ul>
+            </section>
+
+        </aside>
+
+    </main>
+
+    <footer class="text-center p-6 mt-8 text-gray-500 text-sm">
+        <p>&copy; 2025 Quixoticode - Erstellt mit HTML & Tailwind CSS</p>
+        <p>Letzte Aktualisierung: <span id="last-updated"></span></p>
+    </footer>
+
+    <script>
+        // Einfaches Skript, um das Datum der letzten Aktualisierung anzuzeigen
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString('de-DE', {
+            year: 'numeric', month: 'long', day: 'numeric'
+        });
+    </script>
+
+</body>
+</html>
