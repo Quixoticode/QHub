@@ -381,21 +381,16 @@
         // const bodyForPush = document.body;
 
         function toggleSidebar() {
-            const isOpen = sidebar.classList.toggle('open');
-            contentOverlay.classList.toggle('active', isOpen); // Overlay synchronisieren
-            toggleButton.setAttribute('aria-expanded', isOpen.toString());
-
-            // Optional: Hauptinhalt verschieben (einkommentieren und anpassen falls gewünscht)
-            /*
-            if (isOpen) {
-                bodyForPush.classList.add('sidebar-open');
-                // Optional: Scrollen des Hauptinhalts verhindern, wenn Sidebar offen ist
-                // document.body.style.overflow = 'hidden';
-            } else {
-                bodyForPush.classList.remove('sidebar-open');
-                // document.body.style.overflow = '';
+            if (!qSoundsSidebar || !contentOverlayQS || !sidebarToggleQS) return;
+            const isOpen = qSoundsSidebar.classList.toggle('open');
+            contentOverlayQS.classList.toggle('active', isOpen);
+            sidebarToggleQS.setAttribute('aria-expanded', isOpen.toString());
+            if (sidebarInternalToggleQS) {
+                sidebarInternalToggleQS.setAttribute('aria-expanded', isOpen.toString());
             }
-            */
+            sidebarToggleQS.style.display = isOpen ? 'none' : 'flex';
+        }
+
         }
 
         toggleButton.addEventListener('click', toggleSidebar);
